@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+<!--  <bean id="UserService" class="service.impl.UserServiceImpl">-->
+<!--    <constructor-arg name="name" value="bob"></constructor-arg>-->
+<!--    <constructor-arg name="age" value="18"></constructor-arg>-->
+<!--    <constructor-arg name="date" ref="now"></constructor-arg>-->
+<!--  </bean>-->
+  <bean id="now" class="java.util.Date"></bean>
+  <bean id="UserService" class="service.impl.UserServiceImpl">
+    <property name="name" value="bob"></property>
+    <property name="age" value="18"></property>
+    <property name="date" ref="now"></property>
+  </bean>
+</beans>

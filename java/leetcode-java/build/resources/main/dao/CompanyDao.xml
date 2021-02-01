@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.CompanyDao">
+
+  <resultMap id="CompanyInfo" type="java.util.Map">
+    <id column="id" property="id"></id>
+    <result column="name" property="name"></result>
+    <result column="auth" property="auth"></result>
+    <result column="box_price" property="boxPrice"></result>
+    <result column="status" property="status"></result>
+    <result column="alias" property="alias"></result>
+    <result column="address" property="address"></result>
+    <result column="sign_sk" property="signSk"></result>
+    <result column="sign_app" property="signApp"></result>
+    <result column="sign_sid" property="signSid"></result>
+    <result column="service_type" property="serviceType"></result>
+    <result column="service_url" property="serviceUrl"></result>
+    <result column="service_id" property="serviceId"></result>
+    <result column="private" property="isPrivate" javaType="long"></result>
+    <result column="appid" property="appid"></result>
+    <result column="ali_app_id" property="aliAppId"></result>
+    <result column="ali_user_id" property="aliUserId"></result>
+    <result column="need_split" property="needSplit"></result>
+    <result column="face_app_id" property="faceAppId"></result>
+    <result column="pay_score_id" property="payScoreId"></result>
+    <result column="fee_mode" property="feeMode"></result>
+    <result column="fee_amount" property="feeAmount"></result>
+    <result column="is_collected" property="isCollected"></result>
+    <result column="fee_diff" property="feeDiff"></result>
+  </resultMap>
+
+  <!--  配置查询所有-->
+  <select id="findAllCompany" resultMap="CompanyInfo">
+        select * from gbox_manager.companies
+   </select>
+
+  <select id="findByCompanyId" parameterType="java.lang.Integer" resultType="mybatis.Company">
+    select name from gbox_manager.companies where id = #{companyId}
+  </select>
+
+</mapper>

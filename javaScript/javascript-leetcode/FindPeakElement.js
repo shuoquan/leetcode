@@ -1,0 +1,3 @@
+const findPeakElement = function(nums) {
+
+};
